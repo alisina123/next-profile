@@ -60,12 +60,11 @@ export default function About() {
           animate={isLoaded ? "visible" : "hidden"}
         >
           <motion.div variants={itemVariants}>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-              Professional Resume
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              Professional <span className="text-primary">Resume</span>
             </h1>
             <p className="text-muted-foreground max-w-2xl leading-relaxed">
-              Full-stack developer with over 6 years of experience building web applications and enterprise solutions.
-              Specialized in JavaScript, React, and modern web technologies.
+              Full-stack developer with 6+ years of experience building modern web applications and enterprise solutions. Specialized in JavaScript, React, Next.js, and scalable system architecture.
             </p>
           </motion.div>
           <motion.div variants={itemVariants}>
@@ -86,16 +85,13 @@ export default function About() {
         >
           <div className="lg:col-span-2 space-y-12">
             <section>
-              <motion.h2 className="text-2xl font-semibold mb-6 flex items-center" variants={itemVariants}>
-                <span className="inline-block w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent text-white flex items-center justify-center mr-3">
-                  <span className="text-sm font-bold">💼</span>
-                </span>
+              <motion.h2 className="text-2xl font-bold mb-6 text-foreground" variants={itemVariants}>
                 Work Experience
               </motion.h2>
 
-              <div className="space-y-8">
+              <div className="space-y-6">
                 <motion.div variants={itemVariants}>
-                  <Card className="overflow-hidden border-l-4 border-l-primary hover:border-l-accent hover:shadow-lg transition-all hover:-translate-y-1">
+                  <Card className="overflow-hidden border-l-4 border-l-primary bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="p-6">
                     <div className="flex flex-col md:flex-row justify-between mb-2">
                       <h3 className="font-bold text-lg">Software Engineer</h3>
@@ -123,7 +119,7 @@ export default function About() {
                 </Card>
                 </motion.div>
                 <motion.div variants={itemVariants}>
-                  <Card className="overflow-hidden border-l-4 border-l-primary/70 hover:border-l-accent hover:shadow-lg transition-all hover:-translate-y-1">
+                  <Card className="overflow-hidden border-l-4 border-l-primary/70 bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                     <CardContent className="p-6">
                       <div className="flex flex-col md:flex-row justify-between mb-2">
                         <h3 className="font-bold text-lg">Full Stack Developer</h3>
@@ -165,7 +161,7 @@ export default function About() {
                   </Card>
                 </motion.div>
                 <motion.div variants={itemVariants}>
-                  <Card className="overflow-hidden border-l-4 border-l-primary/30 hover:border-l-accent hover:shadow-lg transition-all hover:-translate-y-1">
+                  <Card className="overflow-hidden border-l-4 border-l-primary/30 bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                     <CardContent className="p-6">
                       <div className="flex flex-col md:flex-row justify-between mb-2">
                         <h3 className="font-bold text-lg">Software Developer</h3>
@@ -190,15 +186,11 @@ export default function About() {
 
           <motion.div className="space-y-12" variants={containerVariants} initial="hidden" animate={isLoaded ? "visible" : "hidden"}>
             <section>
-              <motion.h2 className="text-2xl font-semibold mb-6 flex items-center" variants={itemVariants}>
-                <span className="inline-block w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent text-white flex items-center justify-center mr-3">
-                  <span className="text-sm font-bold">🎓</span>
-                </span>
+              <motion.h2 className="text-2xl font-bold mb-6 text-foreground" variants={itemVariants}>
                 Education
               </motion.h2>
-
               <motion.div variants={itemVariants}>
-                <Card className="hover:shadow-lg hover:border-primary/50 transition-all hover:-translate-y-1">
+                <Card className="bg-white hover:shadow-lg hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="p-6">
                     <div className="mb-2">
                       <h3 className="font-bold text-lg">Bachelor of Computer Science</h3>
@@ -211,10 +203,7 @@ export default function About() {
             </section>
 
             <section>
-              <motion.h2 className="text-2xl font-semibold mb-6 flex items-center" variants={itemVariants}>
-                <span className="inline-block w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent text-white flex items-center justify-center mr-3">
-                  <span className="text-sm font-bold">🛠️</span>
-                </span>
+              <motion.h2 className="text-2xl font-bold mb-6 text-foreground" variants={itemVariants}>
                 Skills
               </motion.h2>
 
@@ -273,15 +262,12 @@ export default function About() {
             </section>
 
             <section>
-              <motion.h2 className="text-2xl font-semibold mb-6 flex items-center" variants={itemVariants}>
-                <span className="inline-block w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent text-white flex items-center justify-center mr-3">
-                  <span className="text-sm font-bold">📞</span>
-                </span>
+              <motion.h2 className="text-2xl font-bold mb-6 text-foreground" variants={itemVariants}>
                 Contact
               </motion.h2>
 
               <motion.div variants={itemVariants}>
-                <Card className="hover:shadow-lg hover:border-primary/50 transition-all hover:-translate-y-1">
+                <Card className="bg-white hover:shadow-lg hover:border-primary/50 transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="p-6 space-y-4">
                     <p className="flex items-center gap-2">
                       <span className="text-primary">📧</span>

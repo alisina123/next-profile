@@ -134,8 +134,8 @@ export default function Blogs() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-              My Blog Posts
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              My <span className="text-primary">Blog</span>
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl">
               Insights, tutorials, and thoughts on web development, technology, and building amazing digital products.
@@ -174,54 +174,54 @@ export default function Blogs() {
             animate="visible"
           >
             {filteredPosts.map((post) => (
-              <motion.div key={post.id} variants={itemVariants}>
+              <motion.div key={post.id} variants={itemVariants} whileHover={{ y: -8 }}>
                 <Link href={`/blogs/${post.slug}`}>
-                  <Card className="h-full overflow-hidden hover:border-primary/50 transition-all cursor-pointer group">
+                  <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer group bg-white border border-border">
                     {/* Card Image Area */}
                     <motion.div
-                      className="relative h-48 bg-gradient-to-br from-primary/20 to-secondary/20 overflow-hidden"
+                      className="relative h-40 bg-gradient-to-br from-primary/10 to-primary/5 overflow-hidden border-b border-border"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
                     >
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="text-center">
-                          <div className="text-4xl font-bold text-primary/40">{post.id}</div>
-                          <p className="text-sm text-muted-foreground mt-2">{post.category}</p>
+                          <div className="text-5xl font-bold text-primary/20">{post.id}</div>
                         </div>
                       </div>
                     </motion.div>
 
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between gap-2 mb-2">
-                        <Badge variant="secondary" className="bg-primary/10 text-primary">{post.category}</Badge>
+                        <Badge className="bg-primary text-white text-xs">{post.category}</Badge>
                       </div>
-                      <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">{post.title}</CardTitle>
-                      <CardDescription className="line-clamp-2 text-sm">{post.description}</CardDescription>
+                      <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors text-lg">{post.title}</CardTitle>
                     </CardHeader>
 
-                    <CardContent className="space-y-4">
+                    <CardContent className="space-y-3">
+                      <p className="text-muted-foreground text-sm line-clamp-2">{post.description}</p>
+                      
                       {/* Tags */}
                       <div className="flex flex-wrap gap-1">
                         {post.tags.slice(0, 2).map((tag) => (
-                          <Badge key={tag} variant="outline" className="text-xs">
+                          <Badge key={tag} variant="outline" className="text-xs bg-primary/5 border-primary/20 text-foreground">
                             {tag}
                           </Badge>
                         ))}
                       </div>
 
                       {/* Meta Info */}
-                      <div className="space-y-2 pt-4 border-t">
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Calendar size={14} />
+                      <div className="space-y-2 pt-3 border-t border-border">
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                          <Calendar size={13} />
                           {post.date}
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-muted-foreground">{post.readTime}</span>
                           <motion.div
-                            className="text-primary flex items-center gap-1"
+                            className="text-primary flex items-center gap-1 text-sm font-medium"
                             whileHover={{ x: 5 }}
                           >
-                            Read <ArrowRight size={16} />
+                            Read <ArrowRight size={14} />
                           </motion.div>
                         </div>
                       </div>
