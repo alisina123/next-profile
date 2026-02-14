@@ -129,15 +129,21 @@ export default function Blogs() {
         <div className="container relative z-10 px-4 py-12 md:py-20 mx-auto">
           {/* Header */}
           <motion.div
-            className="mb-12"
+            className="mb-16 text-center"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-              My <span className="text-primary">Blog</span>
-            </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl">
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.1 }}
+            >
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground inline">
+                My <span className="text-primary">Blog</span>
+              </h1>
+            </motion.div>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
               Insights, tutorials, and thoughts on web development, technology, and building amazing digital products.
             </p>
           </motion.div>

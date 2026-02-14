@@ -138,8 +138,8 @@ export default function Projects() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-              My Projects
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+              My <span className="text-primary">Projects</span>
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed">
               Explore my portfolio of projects showcasing my skills and experience in web development. Each project
@@ -212,13 +212,16 @@ export default function Projects() {
 // Project card component
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
-      <Card className="overflow-hidden group hover:shadow-2xl hover:border-primary/50 transition-all duration-300 h-full">
-        <div className="relative h-48 overflow-hidden">
+    <motion.div
+      whileHover={{ y: -12 }}
+      transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
+    >
+      <Card className="overflow-hidden group hover:shadow-2xl hover:border-primary/50 transition-all duration-300 h-full bg-white/80 backdrop-blur border border-border">
+        <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5">
           <motion.div
-            className="w-full h-full"
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.5 }}
+            className="w-full h-full relative"
+            whileHover={{ scale: 1.12 }}
+            transition={{ duration: 0.6 }}
           >
             <Image
               src={project.image || "/placeholder.svg"}
@@ -227,38 +230,90 @@ function ProjectCard({ project }: { project: Project }) {
               className="object-cover"
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            whileHover={{ opacity: 1 }}
+          />
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            whileHover={{ opacity: 1 }}
+          >
+            <motion.div
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <div className="text-white text-center">
+                <p className="font-semibold">View Project</p>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
+
         <CardContent className="pt-6">
-          <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
-          <p className="text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.technologies.map((tech) => (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1 }}
+          >
+            <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{project.title}</h3>
+            <p className="text-muted-foreground mb-4 line-clamp-2 text-sm">{project.description}</p>
+          </motion.div>
+
+          <motion.div
+            className="flex flex-wrap gap-2 mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.15 }}
+          >
+            {project.technologies.map((tech, idx) => (
               <motion.div
                 key={tech}
-                whileHover={{ scale: 1.05 }}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.15 + idx * 0.05 }}
+                whileHover={{ scale: 1.1 }}
               >
-                <Badge key={tech} className="text-xs bg-primary/10 text-primary hover:bg-primary/20">
+                <Badge className="text-xs bg-primary text-white hover:bg-primary/90 shadow-sm">
                   {tech}
                 </Badge>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </CardContent>
-        <CardFooter className="flex justify-between border-t pt-4 gap-2">
-          <motion.div className="flex-1" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button asChild variant="outline" size="sm" className="w-full hover:bg-primary hover:text-white">
+
+        <CardFooter className="flex justify-between border-t border-border pt-4 gap-2 bg-gradient-to-r from-transparent to-primary/5">
+          <motion.div
+            className="flex-1"
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="w-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
+            >
               <Link href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                 <Eye className="mr-2 h-4 w-4" />
-                Demo
+                Live Demo
               </Link>
             </Button>
           </motion.div>
-          <motion.div className="flex-1" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button asChild variant="outline" size="sm" className="w-full hover:bg-primary hover:text-white">
+          <motion.div
+            className="flex-1"
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button
+              asChild
+              variant="outline"
+              size="sm"
+              className="w-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
+            >
               <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
-                Code
+                Source Code
               </Link>
             </Button>
           </motion.div>

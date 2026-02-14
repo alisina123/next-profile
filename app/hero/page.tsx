@@ -169,43 +169,57 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Skills section */}
+          {/* Tech Stack Section */}
           <motion.div className="mt-24 md:mt-32 pt-16 border-t border-border" variants={itemVariants} initial="hidden" animate="visible">
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-foreground mb-2">Tech Stack</h3>
-              <p className="text-muted-foreground">Tools and technologies I work with</p>
+            <div className="mb-12">
+              <h3 className="text-3xl font-bold text-foreground mb-2">Technologies I Work With</h3>
+              <p className="text-muted-foreground text-lg">Frontend, Backend, Tools & Platforms</p>
             </div>
-            <motion.div className="flex flex-wrap gap-2">
+
+            {/* Tech Categories */}
+            <motion.div className="space-y-8">
               {[
-                "JavaScript",
-                "React.js",
-                "TypeScript",
-                "Next.js",
-                "Tailwind CSS",
-                "ShadCN UI",
-                "PostgreSQL",
-                "Java",
-                "Spring Boot",
-                "Rest API",
-                "Python",
-                "Odoo ERP",
-                "Docker",
-                "Git",
-                "GitHub",
-                "Figma",
-              ].map((skill, index) => (
+                {
+                  category: "Frontend",
+                  icon: "⚛️",
+                  tech: ["JavaScript", "React.js", "TypeScript", "Next.js", "Tailwind CSS", "ShadCN UI"],
+                },
+                {
+                  category: "Backend",
+                  icon: "🔌",
+                  tech: ["Node.js", "Express", "Java", "Spring Boot", "Python", "Rest API"],
+                },
+                {
+                  category: "Database & Tools",
+                  icon: "💾",
+                  tech: ["PostgreSQL", "MongoDB", "Docker", "Git", "GitHub", "Figma"],
+                },
+              ].map((section, sectionIndex) => (
                 <motion.div
-                  key={skill}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: index * 0.04 }}
+                  key={section.category}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + sectionIndex * 0.15 }}
                 >
-                  <motion.div
-                    className="px-3 py-1.5 bg-primary text-white rounded-lg text-sm font-medium shadow-sm hover:shadow-md transition-all cursor-pointer"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {skill}
+                  <div className="mb-4 flex items-center gap-3">
+                    <span className="text-2xl">{section.icon}</span>
+                    <h4 className="text-xl font-semibold text-foreground">{section.category}</h4>
+                  </div>
+                  <motion.div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+                    {section.tech.map((tech, index) => (
+                      <motion.div
+                        key={tech}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.25 + sectionIndex * 0.15 + index * 0.05 }}
+                        whileHover={{ scale: 1.08, y: -5 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <div className="p-3 bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-lg text-center hover:border-primary/40 hover:shadow-md hover:bg-primary/15 transition-all duration-300 cursor-pointer group">
+                          <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">{tech}</p>
+                        </div>
+                      </motion.div>
+                    ))}
                   </motion.div>
                 </motion.div>
               ))}
