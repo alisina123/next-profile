@@ -7,7 +7,7 @@ interface PageWrapperProps {
   children: ReactNode
 }
 
-export function PageWrapper({ children }: PageWrapperProps) {
+export const PageWrapper = ({ children }: PageWrapperProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -18,5 +18,3 @@ export function PageWrapper({ children }: PageWrapperProps) {
     </motion.div>
   )
 }
-
-export default PageWrapper
