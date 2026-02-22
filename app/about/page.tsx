@@ -277,7 +277,7 @@ export default function About() {
               </motion.div>
             </section>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </PageWrapper>
   )
