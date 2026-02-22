@@ -18,3 +18,5 @@ export function PageWrapper({ children }: PageWrapperProps) {
     </motion.div>
   )
 }
+
+export default PageWrapper
