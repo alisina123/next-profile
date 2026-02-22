@@ -92,31 +92,24 @@ export default function About() {
               <div className="space-y-6">
                 <motion.div variants={itemVariants}>
                   <Card className="overflow-hidden border-l-4 border-l-primary bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col md:flex-row justify-between mb-2">
-                      <h3 className="font-bold text-lg">Software Engineer</h3>
-                      <div className="text-muted-foreground">Mar 2024 - Present</div>
-                    </div>
-                    <div className="text-muted-foreground mb-4">Virgina-United States Remote</div>
-                    <p className="mb-4">
-                      I'm currently building a full-stack educational platform dedicated to empowering Afghan girls through accessible online learning.
-                      🎓 Empowering the future of education with an integrated platform designed to support a holistic online learning experience. Our platform provides:
-                      🌐 Social Media Integration: Enabling seamless interaction and community-building among students, teachers, and staff.
-
-                      💬 Real-Time Chat Application: Facilitating instant communication for collaboration, feedback, and discussions.
-                      🗂️ Class Management: Streamlining course creation, scheduling, and content delivery, ensuring an efficient learning process.
-                      📊 Staff Dashboards: Offering administrative tools for monitoring progress, performance tracking, and user management.
-                      👥 Social Interaction: Fostering a vibrant learning community where students can connect, collaborate, and grow together.
-                    </p>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      <Badge variant="secondary">Next Js</Badge>
-                      <Badge variant="secondary">Tailwind CSS</Badge>
-                      <Badge variant="secondary">Shadcn UI</Badge>
-                      <Badge variant="secondary">PostgreSQL</Badge>
-                      <Badge variant="secondary">Spring Boot (API)</Badge>
-                    </div>
-                  </CardContent>
-                </Card>
+                    <CardContent className="p-6">
+                      <div className="flex flex-col md:flex-row justify-between mb-2">
+                        <h3 className="font-bold text-lg">Software Engineer</h3>
+                        <div className="text-muted-foreground">Mar 2024 - Present</div>
+                      </div>
+                      <div className="text-muted-foreground mb-4">Virginia, United States Remote</div>
+                      <p className="mb-4">
+                        Building a full-stack educational platform dedicated to empowering Afghan girls through accessible online learning. Implementing social media integration, real-time chat, class management, staff dashboards, and community interaction features.
+                      </p>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        <Badge variant="secondary">Next.js</Badge>
+                        <Badge variant="secondary">Tailwind CSS</Badge>
+                        <Badge variant="secondary">Shadcn UI</Badge>
+                        <Badge variant="secondary">PostgreSQL</Badge>
+                        <Badge variant="secondary">Spring Boot</Badge>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </motion.div>
                 <motion.div variants={itemVariants}>
                   <Card className="overflow-hidden border-l-4 border-l-primary/70 bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
@@ -141,7 +134,7 @@ export default function About() {
                   </Card>
                 </motion.div>
                 <motion.div variants={itemVariants}>
-                  <Card className="overflow-hidden border-l-4 border-l-primary/50 hover:border-l-accent hover:shadow-lg transition-all hover:-translate-y-1">
+                  <Card className="overflow-hidden border-l-4 border-l-primary/50 bg-white hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                     <CardContent className="p-6">
                       <div className="flex flex-col md:flex-row justify-between mb-2">
                         <h3 className="font-bold text-lg">Web Designer</h3>
@@ -149,8 +142,7 @@ export default function About() {
                       </div>
                       <div className="text-muted-foreground mb-4">Kabul, Afghanistan</div>
                       <p className="mb-4">
-                        I was responsible to develop websites, and in a short time, I developed three websites for this
-                        company.
+                        Developed multiple responsive websites for the company, focusing on user experience and modern web design practices.
                       </p>
                       <div className="flex flex-wrap gap-2 mt-4">
                         <Badge variant="secondary">HTML/CSS</Badge>
